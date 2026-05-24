@@ -19,6 +19,9 @@ export const addIdeas = async (FormData) => {
     },
     body: JSON.stringify(modifiedFormData),
   });
+  console.log('response', res);
+  return res
+  
 };
 
 export const createCommentIdeas = async (FormData) => {
