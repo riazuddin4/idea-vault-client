@@ -134,11 +134,3 @@ export default async function ideasDetails({ params }) {
 
 
 
-// const NotFound = () => {
-//     return (
-//         <div className="max-w-7xl mx-auto px-4 py-24 text-center">
-//             <h2 className="text-2xl font-bold text-red-500">Course not found</h2>
-//             <p className="text-muted-foreground mt-2">Please log in to view protected course details.</p>
-//         </div>
-//     );
-// }
