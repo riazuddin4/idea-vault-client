@@ -29,16 +29,7 @@ const MyInteractionsPage = ({ user }) => {
 
     return (
         // <div className="min-h-screen bg-slate-50">
-        //         <div className="flex justify-between items-center mb-12">
-        //             <h2 className="text-2xl font-bold flex items-center gap-2">
-        //                 <BookOpen className="w-6 h-6 text-blue-600" />
-        //                 My Interactions
-        //             </h2>
-        //         </div>
-
-
-        //        
-        //     </main>
+        //       
         // </div>
 
         <div className="min-h-screen bg-slate-50">
