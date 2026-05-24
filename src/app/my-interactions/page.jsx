@@ -38,17 +38,7 @@ const MyInteractionsPage = ({ user }) => {
         //         </div>
 
 
-        //         {loading ? (
-        //             <p className="text-center text-gray-500">Loading your interactions...</p>
-        //         ) : myInteractions.length === 0 ? (
-        //             <p className="text-center text-gray-500">No interactions found.</p>
-        //         ) : (
-        //             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        //                 {myInteractions.map((mongoidea) => (
-        //                     <CourseCardIdeas key={mongoidea._id} mongoidea={mongoidea} />
-        //                 ))}
-        //             </div>
-        //         )}
+        //        
         //     </main>
         // </div>
 
