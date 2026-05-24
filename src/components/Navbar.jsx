@@ -158,8 +158,6 @@ import {
   X,
   LogOut,
   LayoutDashboard,
-  Moon,
-  Sun,
 } from "lucide-react";
 
 import Link from "next/link";
@@ -189,10 +187,7 @@ export function MainNavbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // const handleThemeToggle = () => {
-  //   setTheme(theme === "dark" ? "light" : "dark");
-  // };
-  // console.log(theme);
+
   const handleLogOut = async () => {
     await signOut();
     router.push("/");
@@ -260,17 +255,7 @@ export function MainNavbar() {
 
           {/* Right Side */}
           <div className="hidden md:flex items-center gap-4">
-            {/* Theme Button */}
-            {/* <button
-              onClick={handleThemeToggle}
-              className="p-2 rounded-full border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-            >
-              {theme === "dark" ? (
-                <Sun className="w-5 h-5 text-yellow-400" />
-              ) : (
-                <Moon className="w-5 h-5 text-slate-700" />
-              )}
-            </button> */}
+            
             <ThemeToggle />
 
             {!isPending && !session ? (
@@ -358,17 +343,7 @@ export function MainNavbar() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-3">
-            {/* Mobile Theme Toggle */}
-            {/* <button
-              onClick={}
-              className="p-2 rounded-full border border-slate-300 dark:border-slate-700"
-            >
-              {theme === "dark" ? (
-                <Sun className="w-5 h-5 text-yellow-400" />
-              ) : (
-                <Moon className="w-5 h-5 text-slate-700 dark:text-white" />
-              )}
-            </button> */}
+            
               <ThemeToggle />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
