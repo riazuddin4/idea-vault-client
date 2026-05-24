@@ -1,5 +1,5 @@
 "use client"
-import CommentInteraction from '@/components/CommentInteraction';
+
 import CourseCardIdeas from '@/components/CourseCardIdeas';
 import { authClient } from '@/lib/auth-client';
 import { fetchInteractions } from '@/lib/courses/data';
