@@ -40,7 +40,6 @@ export function EditModal({ mongoidea }) {
     }
     return (
         <Modal>
-            {/* <Button variant="secondary">Open Contact Form</Button> */}
 
             <Button variant='outline' className='rounded-none '> <BiEdit /> Edit</Button>
 
