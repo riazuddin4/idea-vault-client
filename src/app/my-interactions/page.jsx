@@ -1,6 +1,5 @@
 "use client"
 
-import CourseCardIdeas from '@/components/CourseCardIdeas';
 import { authClient } from '@/lib/auth-client';
 import { fetchInteractions } from '@/lib/courses/data';
 import { BookOpen } from 'lucide-react';
