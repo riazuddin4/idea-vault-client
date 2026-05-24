@@ -16,6 +16,6 @@ export async function proxy(request) {
 // export default function proxy(request: NextRequest) { ... }
 
 export const config = {
-  matcher: ['/ideas/:id', ],
+  matcher: ['/ideas/:id', '/my-ideas',] // Protect these routes,
 };
 // http://localhost:3000/about/all-path
