@@ -1,6 +1,6 @@
 "use client"
 import CourseCardIdeas from '@/components/CourseCardIdeas';
-import { authClient, useSession } from '@/lib/auth-client';
+import { authClient } from '@/lib/auth-client';
 import { fetchIdeasByEmail } from '@/lib/courses/data';
 import { BookOpen } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
