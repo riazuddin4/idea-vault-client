@@ -92,8 +92,8 @@ export default function CommentForm({ ideas }) {
                         <div key={c.id} className="bg-gray-300 p-2 rounded text-sm text-black">
                             <p className="font-semibold text-xs text-gray-700">{c.email}</p>
                             <p className="mt-1">{c.text}</p>
-                            <DeleteAlert commentId={c.id} />
-                            <EditModal commentId={c.id} />
+                            {/* <DeleteAlert commentId={c.id} />
+                            <EditModal commentId={c.id} /> */}
                         </div>
                     ))}
                 </div>
