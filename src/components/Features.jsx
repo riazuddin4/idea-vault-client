@@ -19,11 +19,11 @@ const Features = () => {
         },
     ]
     return (
-        <section className="py-24 bg-white">
+        <section className="py-24 ">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div className="space-y-4 mb-16">
                     <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm">Our Benefits</h2>
-                    <h3 className="text-4xl font-extrabold text-slate-900">Why Choose ideas?</h3>
+                    <h3 className="text-4xl font-extrabold">Why Choose ideas?</h3>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {featureItems.map((f, i) => (
