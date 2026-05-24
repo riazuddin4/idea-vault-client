@@ -6,6 +6,7 @@ export const fetchCourses = async (searchTerm = '') => {
   return data || [];
 };
 
+
 export const fetchFeaturedCourses = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/featured`);
   const data = await res.json();

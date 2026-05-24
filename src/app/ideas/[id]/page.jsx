@@ -125,7 +125,7 @@ export default async function ideasDetails({ params }) {
 
                
 
-                <CommentFrom />
+                <CommentFrom ideas={ideas} />
 
             </div>
         </div>

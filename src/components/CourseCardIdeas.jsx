@@ -2,6 +2,8 @@ import { Button, Chip } from "@heroui/react";
 import { BookOpen, Clock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { DeleteAlert } from "./DeleteAlert";
+import { EditModal } from "./EditModal";
 
 const CourseCardIdeas = ({ mongoidea }) => {
     const { _id, IdeaTitle, ImageURL, Category, ShortDescription, DetailedDescription, Tags, EstimatedBudget, TargetAudience, ProblemStatement, ProposedSolution} = mongoidea;
@@ -23,7 +25,9 @@ const CourseCardIdeas = ({ mongoidea }) => {
                         variant="solid"
                         className="font-bold shadow-lg shadow-blue-600/20"
                     >
-                        {Category}
+                        {/* {Category} */}
+                        <EditModal mongoidea={mongoidea} />
+                        <DeleteAlert mongoidea={mongoidea} />
                     </Chip>
                 </div>
             </div>

@@ -1,36 +1,27 @@
+
 import CourseCard from "@/components/CourseCard";
 import CoursesHeader from "@/components/CoursesHeader";
+import FilterButton from "@/components/FilterButton";
 import { fetchCourses } from "@/lib/courses/data";
-import { Button } from "@heroui/react";
-import { BookOpen, Filter } from "lucide-react";
+import { BookOpen } from "lucide-react";
 
+const IdeasPage = async ({ searchParams }) => {
+    const params = await searchParams;
+    const searchTerm = params?.searchTerm || "";
+    const category = params?.category || "";
 
-// const FetchIdeas = async () =>{
-//     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/ideas`);
-//     const ideas = await res.json();
-//     return ideas || [];
-// }
+    console.log("Search Term:", category);
+    //  data fetching
+    const ideas = await fetchCourses(searchTerm);
 
-const ideasPage = async ({ searchParams }) => {
-    // console.log(searchParams);
-    const { sParams, category } = await searchParams;
-    // console.log(sParams);
-
-    const ideas = await fetchCourses(sParams?.searchTerm || "");
-
-    // const ideas = await FetchIdeas();
-    // console.log(ideas); 
-
-    // const { category, search } = await searchParams;
-    // console.log(category)
-    // const res = await fetch('', { cache: 'no-store' })
-    // const books = await res.json()
-
-    let filteredIdeas = ideas;
+    // The real logic of filtering by category
+    let filteredIdeas = ideas || [];
     if (category) {
-        filteredIdeas = ideas.filter(idea => idea.category.toLowerCase() === category.toLowerCase());
+        filteredIdeas = ideas.filter(
+            (idea) => idea.Category?.toLowerCase() === category.toLowerCase()
+        );
+        console.log("Filtered Ideas:", filteredIdeas);
     }
-
 
     return (
         <div className="min-h-screen bg-slate-50">
@@ -38,34 +29,31 @@ const ideasPage = async ({ searchParams }) => {
             <CoursesHeader />
 
             <main className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center mb-12">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-12">
                     <h2 className="text-2xl font-bold flex items-center gap-2">
                         <BookOpen className="w-6 h-6 text-blue-600" />
                         All Ideas
                     </h2>
-                    <Button
-
-                        variant="flat"
-                        startContent={<Filter className="w-4 h-4" />}
-                        className="rounded-full font-bold"
-                    >
-                        Filters
-                        {/* {filteredIdeas.map((category) => (
-                            <CourseCard key={category._id} category={category} />
-                        ))} */}
-                    </Button>
+                    
+                    <FilterButton currentCategory={category} />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {
-                        ideas?.map((mongoidea) => <CourseCard key={mongoidea._id} mongoidea={mongoidea} />)
-                    }
+                    {filteredIdeas.length > 0 ? (
+                        filteredIdeas.map((mongoidea) => (
+                            <CourseCard key={mongoidea._id} mongoidea={mongoidea} />
+                        ))
+                    ) : (
+                        <div className="col-span-full text-center py-12">
+                            <p className="text-gray-500 font-medium">
+                                No ideas found in this category!
+                            </p>
+                        </div>
+                    )}
                 </div>
-
-
             </main>
         </div>
     );
 };
 
-export default ideasPage;
+export default IdeasPage;

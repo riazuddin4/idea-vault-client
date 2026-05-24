@@ -5,8 +5,11 @@ import { useState } from 'react';
 import { createCommentIdeas } from '@/lib/courses/action';
 import { useRouter } from 'next/navigation';
 import { useSession } from '@/lib/auth-client';
+import { EditModal } from './EditModal';
+import { DeleteAlert } from './DeleteAlert';
 
-export default function CommentForm() {
+export default function CommentForm({ ideas }) {
+    // const {} = ideas
     const [comment, setComment] = useState('');
     const [commentsList, setCommentsList] = useState([]);
 
@@ -22,7 +25,20 @@ export default function CommentForm() {
         const formData = new FormData(form);
 
         const userEmail = session?.user?.email || "anonymous@domain.com";
+
+        const dynamicTitle = ideas?.IdeaTitle || "Untitled Course";
+        console.log("Submitting comment for course:", dynamicTitle); 
+
+
+        const now = new Date();  
+        const autoTime = now.toLocaleString(); 
+
+
         formData.append("email", userEmail);
+
+        formData.append("title", dynamicTitle); 
+        formData.append("time", autoTime);  
+        formData.append("comment", comment); 
 
         try {
             const commentsData = await createCommentIdeas(formData);
@@ -30,6 +46,8 @@ export default function CommentForm() {
             if (commentsData?.insertedId) {
                 const newCommentObj = {
                     id: commentsData.insertedId,
+                    title: dynamicTitle,
+                    time: autoTime,
                     text: comment,
                     email: userEmail
                 };
@@ -51,7 +69,8 @@ export default function CommentForm() {
             <h2 className="text-lg font-bold text-black mb-2">Write a Comment</h2>
 
             <form onSubmit={handleComment}>
-                {/* Fixed: Swapped to an actual textarea JSX tag with the missing name attribute */}
+
+
                 <textarea
                     name="comment"
                     value={comment}
@@ -73,6 +92,8 @@ export default function CommentForm() {
                         <div key={c.id} className="bg-gray-300 p-2 rounded text-sm text-black">
                             <p className="font-semibold text-xs text-gray-700">{c.email}</p>
                             <p className="mt-1">{c.text}</p>
+                            <DeleteAlert commentId={c.id} />
+                            <EditModal commentId={c.id} />
                         </div>
                     ))}
                 </div>

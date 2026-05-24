@@ -41,6 +41,23 @@ export const createCommentIdeas = async (FormData) => {
   return res.json();
 };
 
+// export const updateIdeas = async (id) => {
+//   const { token } = await auth.api.getToken({
+//     headers: await headers(),
+//   });
+//   const res = await fetch(`NEXT_PUBLIC_API_URL/${_id}`, {
+//     method: 'PATCH',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       "Authorization": `Bearer ${token}`,
+//     },
+//     body: JSON.stringify(mongoidea)
+//   })
+
+//   const data = await res.json()
+//   console.log(data)
+// };
+
 
 
 export const deleteEnrollment = async (id) => {

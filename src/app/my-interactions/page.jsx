@@ -62,18 +62,18 @@ const MyInteractionsPage = ({ user }) => {
                 ) : myInteractions.length === 0 ? (
                     <p className="text-center text-gray-500">No interactions found.</p>
                 ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 gap-6">
                         {myInteractions.map((interaction) => (
                             <div
                                 key={interaction._id}
-                                className="max-w-md mx-auto p-4 border border-gray-200 rounded-lg shadow-sm"
+                                className="w-[800px] mx-auto p-4 border border-gray-200 rounded-lg shadow-sm"
                             >
                                 <h3 className="text-lg font-semibold text-gray-900">
                                     {interaction.title}
                                 </h3>
                                 <p className="text-gray-600 mt-1">{interaction.comment}</p>
                                 <span className="text-sm text-gray-400 mt-2 block">
-                                    {new Date(interaction.date).toLocaleDateString()}
+                                    {new Date(interaction.time).toLocaleDateString()}
                                 </span>
                             </div>
                         ))}
