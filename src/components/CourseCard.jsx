@@ -7,7 +7,7 @@ const CourseCard = ({ mongoidea }) => {
     const { _id, IdeaTitle, ImageURL, Category, ShortDescription, DetailedDescription, Tags, EstimatedBudget, TargetAudience, ProblemStatement, ProposedSolution} = mongoidea;
     return (
         <div
-            className="group flex flex-col bg-white rounded-4xl border border-slate-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            className="group flex flex-col  rounded-4xl border border-slate-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
         >
             <div className="relative overflow-hidden aspect-16/10">
                 <Image
@@ -35,7 +35,7 @@ const CourseCard = ({ mongoidea }) => {
                         </h3>
                     </Link>
                     <p className="text-sm text-slate-500 font-medium flex items-center gap-1">
-                        By <span className="text-slate-900">{EstimatedBudget}</span>
+                        By <span className="">{EstimatedBudget}</span>
                     </p>
                 </div>
 

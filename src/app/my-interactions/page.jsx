@@ -28,7 +28,7 @@ const MyInteractionsPage = ({ user }) => {
 
 
     return (
-        <div className="min-h-screen bg-slate-50">
+        <div className="min-h-screen ">
             <main className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
                 <h2 className="text-2xl font-bold mb-6">My Interactions</h2>
 
@@ -43,11 +43,11 @@ const MyInteractionsPage = ({ user }) => {
                                 key={interaction._id}
                                 className="w-[800px] mx-auto p-4 border border-gray-200 rounded-lg shadow-sm"
                             >
-                                <h3 className="text-lg font-semibold text-gray-900">
+                                <h3 className="text-lg font-semibold ">
                                     {interaction.title}
                                 </h3>
-                                <p className="text-gray-600 mt-1">{interaction.comment}</p>
-                                <span className="text-sm text-gray-400 mt-2 block">
+                                <p className=" mt-1">{interaction.comment}</p>
+                                <span className="text-sm  mt-2 block">
                                     {new Date(interaction.time).toLocaleDateString()}
                                 </span>
                             </div>

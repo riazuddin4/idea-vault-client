@@ -39,6 +39,7 @@ export const createCommentIdeas = async (FormData) => {
     },
     body: JSON.stringify(commentFormData),
   });
+  console.log('response', res);
 
   if (!res.ok) return null;
   return res.json();

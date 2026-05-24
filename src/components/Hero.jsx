@@ -29,7 +29,7 @@ const Hero = () => {
                                     <Star className="w-4 h-4 fill-blue-600" />
                                     <span>Trusted by 10,000+ Students Ideas</span>
                                 </div>
-                                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+                                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1]">
                                    The Power of Innovation{' '}
                                     <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-600 to-blue-800">
                                         Turn Ideas into Reality
@@ -123,7 +123,7 @@ const Hero = () => {
                                     <Star className="w-4 h-4 fill-blue-600" />
                                     <span>Trusted by 10,000+ Students Ideas</span>
                                 </div>
-                                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+                                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1]">
                                     From Problem to Solution{' '}
                                     <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-600 to-blue-800">
                                         From Problem to Solution
@@ -217,7 +217,7 @@ const Hero = () => {
                                     <Star className="w-4 h-4 fill-blue-600" />
                                     <span>Trusted by 10,000+ Students Ideas</span>
                                 </div>
-                                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+                                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1]">
                                     Join the Innovation Movement{' '}
                                     <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-600 to-blue-800">
                                         Your Next Big Idea Starts Here

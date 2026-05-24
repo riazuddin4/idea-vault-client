@@ -61,7 +61,7 @@ export default async function ideasDetails({ params }) {
                     </div>
 
                     <div className="space-y-4">
-                        <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                        <h1 className="text-4xl md:text-5xl font-black tracking-tight leading-tight">
                             {IdeaTitle}
                         </h1>
                         <p className="text-xl text-slate-500 leading-relaxed">
