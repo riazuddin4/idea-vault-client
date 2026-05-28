@@ -93,6 +93,22 @@ export function EditModal({ mongoidea }) {
                                                     className="w-full h-32 border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 rounded-2xl bg-white transition-all duration-300 shadow-none resize-none"
                                                 />
                                             </div>
+                                            <div className="md:col-span-2 space-y-2">
+                                                <label
+                                                    htmlFor="ShortDescription"
+                                                    className="text-sm font-bold text-slate-700 ml-1"
+                                                >
+                                                    Short Description
+                                                </label>
+                                                <TextArea
+                                                    id="ShortDescription"
+                                                    defaultValue={ShortDescription}
+                                                    name='ShortDescription'
+                                                    required
+                                                    placeholder="What will students learn in this course?"
+                                                    className="w-full h-32 border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 rounded-2xl bg-white transition-all duration-300 shadow-none resize-none"
+                                                />
+                                            </div>
 
                                             <div className="space-y-2">
                                                 <label
@@ -189,6 +205,44 @@ export function EditModal({ mongoidea }) {
                                                     className="w-full h-14 border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 rounded-2xl bg-white transition-all duration-300 shadow-none"
                                                 />
                                             </div>
+                                            <div className="space-y-2">
+                                                <label
+                                                    htmlFor="ProblemStatement"
+                                                    className="text-sm font-bold text-slate-700 ml-1"
+                                                >
+                                                    Problem Statement
+                                                </label>
+                                                <Input
+                                                    id="ProblemStatement"
+                                                    name="ProblemStatement"
+                                                    defaultValue={ProblemStatement}
+                                                    required
+                                                    type="text"
+                                                    placeholder="e.g. 12h 30m"
+                                                    startContent={<Clock className="w-5 h-5 text-slate-400" />}
+
+                                                    className="w-full h-14 border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 rounded-2xl bg-white transition-all duration-300 shadow-none"
+                                                />
+                                            </div>
+                                            <div className="space-y-2">
+                                                <label
+                                                    htmlFor="ProposedSolution"
+                                                    className="text-sm font-bold text-slate-700 ml-1"
+                                                >
+                                                    Proposed Solution
+                                                </label>
+                                                <Input
+                                                    id="ProposedSolution"
+                                                    name="ProposedSolution"
+                                                    defaultValue={ProposedSolution}
+                                                    required
+                                                    type="text"
+                                                    placeholder="e.g. 12h 30m"
+                                                    startContent={<Clock className="w-5 h-5 text-slate-400" />}
+
+                                                    className="w-full h-14 border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 rounded-2xl bg-white transition-all duration-300 shadow-none"
+                                                />
+                                            </div>
                                         </div>
 
 
@@ -200,7 +254,7 @@ export function EditModal({ mongoidea }) {
                                         <Button slot="close" variant="secondary">
                                             Cancel
                                         </Button>
-                                        <Button type="submit">Save</Button>
+                                        <Button slot="close" type="submit">Save</Button>
                                     </Modal.Footer>
                                 </form>
                             </Surface>

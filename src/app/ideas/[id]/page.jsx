@@ -65,6 +65,9 @@ export default async function ideasDetails({ params }) {
                             {IdeaTitle}
                         </h1>
                         <p className="text-xl text-slate-500 leading-relaxed">
+                            {ShortDescription}
+                        </p>
+                        <p className="text-xl text-slate-500 leading-relaxed">
                             {DetailedDescription}
                         </p>
                     </div>
@@ -100,10 +103,16 @@ export default async function ideasDetails({ params }) {
 
                         <div className="space-y-4">
                             <p className="text-slate-700 font-medium">
-                                <strong>Instructor:</strong>  {TargetAudience}
+                                <strong>Target Audience:</strong>  {TargetAudience}
+                            </p>
+                            <p className="text-slate-700 font-medium">
+                                <strong>Problem Statement:</strong>  {ProblemStatement}
+                            </p>
+                            <p className="text-slate-700 font-medium">
+                                <strong>Proposed Solution:</strong>  {ProposedSolution}
                             </p>
                             <div className="w-full h-px bg-slate-100"></div>
-                            <ul className="space-y-3">
+                            {/* <ul className="space-y-3">
                                 {['Lifetime Access', 'Expert Guidance', 'Verified Certificate'].map((item, i) => (
                                     <li
                                         key={i}
@@ -113,7 +122,7 @@ export default async function ideasDetails({ params }) {
                                         {item.IdeaTitle}
                                     </li>
                                 ))}
-                            </ul>
+                            </ul> */}
 
 
                         </div>
